@@ -61,16 +61,16 @@ If you want to change models/strategy/learning rate/LoRA config, edit the consta
 
 ## 4) What Gets Produced
 All artifacts are saved under Assignment3_outputs/:
-#### ·Metrics & Summary
-       summary_results.csv (one row per run: model, strategy, params, time, throughput, Acc, macro-F1)
-#### ·Confusion Matrices & Plots
-       *_confusion_matrix.png
-       training_curves_*.png (if enabled in notebook)
+#### Metrics & Summary
+     summary_results.csv (one row per run: model, strategy, params, time, throughput, Acc, macro-F1)
+#### Confusion Matrices & Plots
+     *_confusion_matrix.png
+     training_curves_*.png (if enabled in notebook)
 #### Error Analysis CSVs (per run)
-       *_errors_all.csv — all misclassified examples (text, true/pred, probs/scores)
-       *_errors_hard_top100.csv — most confident mistakes
-      *_near_misses_top100.csv — borderline samples
-      *_error_slices.csv — slice aggregates (e.g., has_number/negation/comparatives)
+     *_errors_all.csv — all misclassified examples (text, true/pred, probs/scores)
+     *_errors_hard_top100.csv — most confident mistakes
+     *_near_misses_top100.csv — borderline samples
+     *_error_slices.csv — slice aggregates (e.g., has_number/negation/comparatives)
 #### (Optional) SHAP
 If you keep the SHAP section enabled in the script/notebook and have sufficient resources, per-class explanation figures are written to the same folder. If SHAP errors on text types, leave it off (the pipeline is already robust to that and will continue without SHAP).
 
