@@ -1,7 +1,7 @@
 # Financial Sentiment Fine-Tuning (BERT-base & FinBERT)
-This project fine-tunes BERT-base and FinBERT on Financial PhraseBank for 3-class sentiment (Bullish/Neutral/Bearish) using two strategies:
-·Full fine-tuning
-·LoRA (PEFT)
+This project fine-tunes BERT-base and FinBERT on Financial PhraseBank for 3-class sentiment (Bullish/Neutral/Bearish) using two strategies:  
+1. Full fine-tuning  
+2. LoRA (PEFT)
 It also logs efficiency (trainable params, memory, throughput), exports confusion matrices, and writes error-case CSVs (slices, hard errors, near-misses) for analysis.
 
 ## 1) Environment Setup
@@ -30,9 +30,9 @@ pip uninstall -y pyarrow datasets fsspec && pip cache purge then reinstall.
 GPU is optional; accelerate will pick CUDA if available.
 
 ## 2) Data
-We use Financial PhraseBank from HuggingFace Datasets (downloaded automatically):
-Config: typically sentences_50agree.
-Labels mapped to Bullish / Neutral / Bearish (original positive/neutral/negative).
+We use Financial PhraseBank from HuggingFace Datasets (downloaded automatically):  
+Config: typically sentences_50agree.  
+Labels mapped to Bullish / Neutral / Bearish (original positive/neutral/negative).  
 No manual download is needed.
 
 ## 3) Quik Start
@@ -46,8 +46,8 @@ No manual download is needed.
    · Save results, figures, and error CSVs under Assignment3_outputs/
    
 ### Default training settings
-epochs=4, batch_size=8, max_length=128,
-LR: 2e-5 (full FT) / 1e-4 (LoRA),
+epochs=4, batch_size=8, max_length=128,    
+LR: 2e-5 (full FT) / 1e-4 (LoRA),  
 LoRA: r=8, alpha=16, dropout=0.1 (applied to attention/projection modules).
 
 ### B) Reproduce via Python Script
@@ -83,13 +83,13 @@ If you keep the SHAP section enabled in the script/notebook and have sufficient 
 
 
 ## 7) Troubleshooting
-CUDA OOM: lower batch_size to 4 and/or max_length to 96.
-Slow throughput with LoRA: expected due to adapter ops; consider disabling gradient checkpointing (if you enabled it), or use full FT on GPU if memory allows.
-Dataset split reproducibility: seed is fixed at 42; delete Assignment3_outputs/ to rerun clean.
+1. CUDA OOM: lower batch_size to 4 and/or max_length to 96.
+2. Slow throughput with LoRA: expected due to adapter ops; consider disabling gradient checkpointing (if you enabled it), or use full FT on GPU if memory allows.
+3. Dataset split reproducibility: seed is fixed at 42; delete Assignment3_outputs/ to rerun clean.
 
 ## 8) Citation
-Devlin et al., BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
-ProsusAI/FinBERT: domain-adapted BERT for finance
-PEFT/LoRA: Hu et al., LoRA: Low-Rank Adaptation of Large Language Models
-HuggingFace Datasets/Transformers/Accelerate
+1. Devlin et al., BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+2. ProsusAI/FinBERT: domain-adapted BERT for finance
+3. PEFT/LoRA: Hu et al., LoRA: Low-Rank Adaptation of Large Language Models
+4. HuggingFace Datasets/Transformers/Accelerate
 
