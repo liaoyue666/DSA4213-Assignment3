@@ -1,7 +1,7 @@
 # Financial Sentiment Fine-Tuning (BERT-base & FinBERT)
 This project fine-tunes BERT-base and FinBERT on Financial PhraseBank for 3-class sentiment (Bullish/Neutral/Bearish) using two strategies:  
 1. Full fine-tuning  
-2. LoRA (PEFT)
+2. LoRA (PEFT)  
 It also logs efficiency (trainable params, memory, throughput), exports confusion matrices, and writes error-case CSVs (slices, hard errors, near-misses) for analysis.
 
 ## 1) Environment Setup
@@ -42,7 +42,7 @@ No manual download is needed.
    · Install/verify deps (if needed)
    · Load dataset & create 80/10/10 splits (seed=42)
    · Train 4 runs:
-       BERT-base & FinBERT × Full FT/LoRA
+      BERT-base & FinBERT × Full FT/LoRA
    · Save results, figures, and error CSVs under Assignment3_outputs/
    
 ### Default training settings
