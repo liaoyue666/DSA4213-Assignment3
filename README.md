@@ -30,6 +30,23 @@ pip install "transformers==4.44.2" "datasets==2.19.1" "pyarrow==16.1.0" \
             "accelerate>=0.33.0" peft==0.11.1 scikit-learn==1.5.1 \
             matplotlib pandas numpy
 ```
+### Requirements file
+```text
+transformers==4.44.2
+datasets==2.19.1
+pyarrow==16.1.0
+accelerate>=0.33.0
+peft==0.11.1
+scikit-learn==1.5.1
+matplotlib
+pandas
+numpy
+```
+install with:  
+```bash
+pip install -r requirements.txt
+```
+
 ### Notes
 If you hit `pyarrow` / C-extension issues, ensure the pinned versions above and remove older builds:  
 `pip uninstall -y pyarrow datasets fsspec && pip cache purge then reinstall`.  
