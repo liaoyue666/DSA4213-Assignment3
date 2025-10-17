@@ -31,25 +31,26 @@ pip install "transformers==4.44.2" "datasets==2.19.1" "pyarrow==16.1.0" \
             matplotlib pandas numpy
 ```
 ### Notes
-If you hit pyarrow / C-extension issues, ensure the pinned versions above and remove older builds:
-pip uninstall -y pyarrow datasets fsspec && pip cache purge then reinstall.
-GPU is optional; accelerate will pick CUDA if available.
+If you hit `pyarrow` / C-extension issues, ensure the pinned versions above and remove older builds:  
+`pip uninstall -y pyarrow datasets fsspec && pip cache purge then reinstall`.
+GPU is optional; `accelerate` will pick CUDA if available.
 
 ## 2) Data
-We use Financial PhraseBank from HuggingFace Datasets (downloaded automatically):  
-Config: typically sentences_50agree.  
-Labels mapped to Bullish / Neutral / Bearish (original positive/neutral/negative).  
+We use **Financial PhraseBank** from HuggingFace Datasets (downloaded automatically):  
+- Config: typically `sentences_50agree`.  
+- Labels mapped to **Bullish** / **Neutral** / **Bearish** (original positive/neutral/negative).
+
 No manual download is needed.
 
 ## 3) Quik Start
 ### A) Reproduce in the Notebook
-1. Launch Jupyter and open assignment3.ipynb.
+1. Launch Jupyter and open `assignment3.ipynb`.
 2. Run all cells. The notebook will:
-   · Install/verify deps (if needed)
-   · Load dataset & create 80/10/10 splits (seed=42)
-   · Train 4 runs:
-      BERT-base & FinBERT × Full FT/LoRA
-   · Save results, figures, and error CSVs under Assignment3_outputs/
+- Install/verify deps (if needed)
+- Load dataset & create 80/10/10 splits (seed=42)
+- Train 4 runs:
+  - BERT-base & FinBERT × Full FT/LoRA
+- Save results, figures, and error CSVs under Assignment3_outputs/
    
 ### Default training settings
 epochs=4, batch_size=8, max_length=128,    
