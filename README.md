@@ -75,9 +75,9 @@ LR: `2e-5` (full FT) / `1e-4` (LoRA),
 LoRA: `r=8, alpha=16, dropout=0.1` (applied to attention/projection modules).
 
 ### B) Reproduce via Python Script
-Run `assignment3.py` (uses the same defaults as above):
+Run `main.py` (uses the same defaults as above):
 ```bash
-python assignment3.py
+python main.py
 ```
 If you want to change models/strategy/learning rate/LoRA config, edit the constants near the top of the script (or the `run_experiment` calls list). Typical model IDs:
 - `bert-base-uncased`
@@ -101,7 +101,7 @@ If you keep the SHAP section enabled in the script/notebook and have sufficient 
 
 ## 6) Exact Steps to Reproduce the Paper Numbers
 1. Create env and install deps (Section 1).
-2. Run python `assignment3.py` or execute all cells in `assignment3.ipynb`.
+2. Run python `main.py` or execute all cells in `assignment3.ipynb`.
 3. When finished, open `Assignment3_outputs/summary_results.csv` and the generated confusion matrices.
 4. For error-case figures used in the report, you can plot from the CSVs with the provided cells in the notebook (slice error bars, top confusion pairs, near-miss histogram).
 
