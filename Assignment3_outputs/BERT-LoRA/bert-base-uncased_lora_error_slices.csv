@@ -1,0 +1,16 @@
+y_true,y_pred,has_negation,has_comparative,has_number,count
+Bearish,Neutral,False,False,False,20
+Neutral,Bearish,False,False,False,14
+Neutral,Bearish,False,False,True,11
+Bearish,Neutral,False,False,True,9
+Neutral,Bullish,False,False,True,8
+Bearish,Bullish,False,False,True,5
+Bullish,Bearish,False,False,True,4
+Bullish,Bearish,False,False,False,4
+Bearish,Bullish,False,False,False,2
+Neutral,Bullish,False,False,False,2
+Bullish,Neutral,False,False,True,2
+Bearish,Neutral,False,True,True,1
+Bullish,Neutral,False,False,False,1
+Bullish,Bearish,True,False,True,1
+Neutral,Bullish,False,True,True,1
